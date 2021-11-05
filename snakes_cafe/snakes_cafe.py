@@ -91,22 +91,18 @@ def Drinks():
     print("Drinks\n------\n Coffee\n Tea\n Unicorn Tears\n  ")
 
 
-def clientOrder():
-#  fruit['kiwi']   
+def clientOrder():   
     while True:
         print("> ")
         order = input()
-        sliced = slice(1, len(order))
-        toUpper = order[0].upper()
-        orderFormatted = toUpper+order[sliced]
         for item in Menu:
-            if orderFormatted == item["dish"]:
+            if order == item["dish"]:
                 count=item["count"]
                 print(item["dish"] )
                 print(item["count"])
                 count+=1
                 item["count"]= count
-                print(f"** {count} order of {orderFormatted} have been added to your meal **")
+                print(f"** {count} order of {order} have been added to your meal **")
                 break
         if order == "quit":
             break
